@@ -1,14 +1,20 @@
 import pyaudio
 import wave
 import numpy as np
+from tuning import Tuning
+import usb.core
+import usb.util
+import time
+import os
+
 
 RESPEAKER_RATE = 16000
 RESPEAKER_CHANNELS = 6 # change base on firmwares, 1_channel_firmware.bin as 1 or 6_channels_firmware.bin as 6
 RESPEAKER_WIDTH = 2
-# run getDeviceInfo.py to get index
-RESPEAKER_INDEX = 8  # refer to input device id
+# run get_index.py to get index
+RESPEAKER_INDEX = 4  # refer to input device id
 CHUNK = 1024
-RECORD_SECONDS = 5
+RECORD_SECONDS = 6
 WAVE_OUTPUT_FILENAME = "output.wav"
 
 p = pyaudio.PyAudio()
@@ -20,7 +26,7 @@ stream = p.open(
             input=True,
             input_device_index=RESPEAKER_INDEX,)
 
-print("* recording")
+print("Recording")
 
 frames = [] 
 
@@ -30,7 +36,7 @@ for i in range(0, int(RESPEAKER_RATE / CHUNK * RECORD_SECONDS)):
     a = np.frombuffer(data,dtype=np.int16)[0::6]
     frames.append(a.tobytes())
 
-print("* done recording")
+print("Done recording")
 
 stream.stop_stream()
 stream.close()
@@ -42,3 +48,6 @@ wf.setsampwidth(p.get_sample_size(p.get_format_from_width(RESPEAKER_WIDTH)))
 wf.setframerate(RESPEAKER_RATE)
 wf.writeframes(b''.join(frames))
 wf.close()
+
+with open("recording_done.txt", "w") as file:
+    file.write("Recording done")
