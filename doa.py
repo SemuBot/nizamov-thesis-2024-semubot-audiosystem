@@ -15,8 +15,9 @@ if dev:
         try:
             angle_array.append(Mic_tuning.direction)
             print (Mic_tuning.direction)
-            time.sleep(0.1)
         except KeyboardInterrupt:
             break
-    print(angle_array, len(angle_array))
+    #print(angle_array, len(angle_array))
+    #avg = sum(angle_array)/len(angle_array)
+    #print(print(avg))
     

@@ -15,7 +15,7 @@ RESPEAKER_WIDTH = 2
 RESPEAKER_INDEX = 4  # refer to input device id
 CHUNK = 1024
 RECORD_SECONDS = 6
-WAVE_OUTPUT_FILENAME = "output.wav"
+WAVE_OUTPUT_FILENAME = "output8sin.wav"
 
 p = pyaudio.PyAudio()
 
@@ -26,7 +26,7 @@ stream = p.open(
             input=True,
             input_device_index=RESPEAKER_INDEX,)
 
-print("Recording")
+print("RECORDING")
 
 frames = [] 
 
@@ -36,7 +36,7 @@ for i in range(0, int(RESPEAKER_RATE / CHUNK * RECORD_SECONDS)):
     a = np.frombuffer(data,dtype=np.int16)[0::6]
     frames.append(a.tobytes())
 
-print("Done recording")
+print("DONE RECORDING")
 
 stream.stop_stream()
 stream.close()
@@ -49,5 +49,5 @@ wf.setframerate(RESPEAKER_RATE)
 wf.writeframes(b''.join(frames))
 wf.close()
 
-with open("recording_done.txt", "w") as file:
-    file.write("Recording done")
+# with open("recording_done.txt", "w") as file:
+#     file.write("Recording done")
