@@ -33,10 +33,10 @@ def moving_average(pos):
         arr.append(pos)
         n = n + 1
     
-    if n > 0 and n < 12:
+    if n > 0 and n < 10:
         filtered_val = sum(arr[::-1])/n
     else:
-        filtered_val = sum((arr[::-1])[0:12])/12
+        filtered_val = sum((arr[::-1])[0:10])/10
     #print("Filter val: ", filtered_val)
         
         

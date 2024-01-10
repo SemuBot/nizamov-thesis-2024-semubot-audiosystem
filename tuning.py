@@ -10,6 +10,8 @@ USAGE = """Usage: python {} -h
         -r      read all parameters
         NAME    get the parameter with the NAME
         NAME VALUE  set the parameter with the NAME and the VALUE
+        
+        ALL OFF    turn all parameters off
 """
 
 
@@ -154,7 +156,10 @@ def find(vid=0x2886, pid=0x0018):
 
     return Tuning(dev)
 
-
+def turn_all_off(tuning_device):
+    for name, data in PARAMETERS.items():
+        if data[5] == 'rw':
+            tuning_device.write(name, 0)
 
 def main():
     if len(sys.argv) > 1:
@@ -181,7 +186,10 @@ def main():
                     print('{:24} {}'.format(name, dev.read(name)))
             else:
                 name = sys.argv[1].upper()
-                if name in PARAMETERS:
+                if name == 'ALL' and len(sys.argv) > 2 and sys.argv[2].upper() == 'OFF':
+                    turn_all_off(dev)
+                    print('All parameters turned off.')
+                elif name in PARAMETERS:
                     if len(sys.argv) > 2:
                         dev.write(name, sys.argv[2])
                     
