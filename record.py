@@ -14,8 +14,8 @@ RESPEAKER_WIDTH = 2
 # run get_index.py to get index
 RESPEAKER_INDEX = 4  # refer to input device id
 CHUNK = 1024
-RECORD_SECONDS = 6
-WAVE_OUTPUT_FILENAME = "output8sin.wav"
+RECORD_SECONDS = 13
+WAVE_OUTPUT_FILENAME = "noise_delta.wav"
 
 p = pyaudio.PyAudio()
 
@@ -49,5 +49,5 @@ wf.setframerate(RESPEAKER_RATE)
 wf.writeframes(b''.join(frames))
 wf.close()
 
-# with open("recording_done.txt", "w") as file:
-#     file.write("Recording done")
+with open("recording_done.txt", "w") as file:
+     file.write("Recording done")

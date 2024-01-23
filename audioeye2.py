@@ -75,7 +75,7 @@ def draw_eyes():
     
     # DOA
     direction = Mic_tuning.direction
-    direction_filtered = moving_average(direction, 12)
+    direction_filtered = moving_average(direction, 20)
 
     direction_filtered = update_direction_target(direction_filtered, Mic_tuning.direction)
 

@@ -10,14 +10,14 @@ angle_array  = []
 
 if dev:
     Mic_tuning = Tuning(dev)
-    print (Mic_tuning.direction)
+    #print (Mic_tuning.direction)
     while not os.path.exists("recording_done.txt"):
         try:
             angle_array.append(Mic_tuning.direction)
-            print (Mic_tuning.direction)
+            #print (Mic_tuning.direction)
         except KeyboardInterrupt:
             break
     #print(angle_array, len(angle_array))
-    #avg = sum(angle_array)/len(angle_array)
-    #print(print(avg))
+    avg = sum(angle_array)/len(angle_array)
+print(print(avg))
     

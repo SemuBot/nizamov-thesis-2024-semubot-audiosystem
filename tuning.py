@@ -15,9 +15,20 @@ USAGE = """Usage: python {} -h
 """
 
 
+# ASR - Automatic Speech Recognition
+# AES - a digital protocol to run two channels of audio on q single cable. 
+# Comfort Noise is 'realistic' background acoustic noise that is inserted at a receiver during periods that there is no signal received. -> CNI
+
+# Stationary noise reduction typically takes in an explicit noise signal to calculate statistics and performs noise reduction over the entire signal uniformly. 
+# Non-stationary noise reduction dynamically estimates and reduces noise concurrently.
+
+# The nonlinear echo canceller first uses a linear echo canceller to suppress linear echo, 
+#it then applies FFT (Fast Fourier Transform) to convert the signal into a fre-quency spectrum, 
+#and then applies IFFT (Inverse Fast Fourier Transform) to re-synthesize the audio waveform, which is transmitted to the other party of the communication
 
 # parameter list
 # name: (id, offset, type, max, min , r/w, info)
+
 PARAMETERS = {
     'AECFREEZEONOFF': (18, 7, 'int', 1, 0, 'rw', 'Adaptive Echo Canceler updates inhibit.', '0 = Adaptation enabled', '1 = Freeze adaptation, filter only'),
     'AECNORM': (18, 19, 'float', 16, 0.25, 'rw', 'Limit on norm of AEC filter coefficients'),
@@ -30,7 +41,7 @@ PARAMETERS = {
     'AGCONOFF': (19, 0, 'int', 1, 0, 'rw', 'Automatic Gain Control. ', '0 = OFF ', '1 = ON'),
     'AGCMAXGAIN': (19, 1, 'float', 1000, 1, 'rw', 'Maximum AGC gain factor. ', '[0 .. 60] dB (default 30dB = 20log10(31.6))'),
     'AGCDESIREDLEVEL': (19, 2, 'float', 0.99, 1e-08, 'rw', 'Target power level of the output signal. ', '[-inf .. 0] dBov (default: -23dBov = 10log10(0.005))'),
-    'AGCGAIN': (19, 3, 'float', 1000, 1, 'rw', 'Current AGC gain factor. ', '[0 .. 60] dB (default: 0.0dB = 20log10(1.0))'),
+    'AGCGAIN': (19, 3, 'float', 1000, 1, 'rw', 'Current AGC gain factor. ', '[0 .. 60] dB (default: 0.0dB = 20log10(1.0))'), #this affects, everything else can be turned off or it's 'ro'
     'AGCTIME': (19, 4, 'float', 1, 0.1, 'rw', 'Ramps-up / down time-constant in seconds.'),
     'CNIONOFF': (19, 5, 'int', 1, 0, 'rw', 'Comfort Noise Insertion.', '0 = OFF', '1 = ON'),
     'FREEZEONOFF': (19, 6, 'int', 1, 0, 'rw', 'Adaptive beamformer updates.', '0 = Adaptation enabled', '1 = Freeze adaptation, filter only'),
@@ -159,7 +170,12 @@ def find(vid=0x2886, pid=0x0018):
 def turn_all_off(tuning_device):
     for name, data in PARAMETERS.items():
         if data[5] == 'rw':
-            tuning_device.write(name, 0)
+            if name in ['FREEZEONOFF', 'AECFREEZEONOFF']:
+                tuning_device.write(name, int(0))
+            elif name in ['AGCGAIN']:
+                tuning_device.write(name, int(18)) #change the gain if needed
+            else:
+                tuning_device.write(name, int(0))
 
 def main():
     if len(sys.argv) > 1:
