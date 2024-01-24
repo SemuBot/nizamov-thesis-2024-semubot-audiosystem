@@ -15,7 +15,7 @@ RESPEAKER_WIDTH = 2
 RESPEAKER_INDEX = 4  # refer to input device id
 CHUNK = 1024
 RECORD_SECONDS = 13
-WAVE_OUTPUT_FILENAME = "noise_delta.wav"
+WAVE_OUTPUT_FILENAME = "output66voice.wav"
 
 p = pyaudio.PyAudio()
 
