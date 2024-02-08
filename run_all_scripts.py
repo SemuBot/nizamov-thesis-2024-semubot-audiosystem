@@ -4,7 +4,7 @@ import os
 
 try:
     print("Preparing for recording...")
-    time.sleep(4)
+    time.sleep(1.5)
     record_process = subprocess.Popen(['python', 'record.py'])
 
     time.sleep(2.7)

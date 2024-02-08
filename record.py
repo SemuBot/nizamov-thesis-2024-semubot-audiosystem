@@ -14,8 +14,8 @@ RESPEAKER_WIDTH = 2
 # run get_index.py to get index
 RESPEAKER_INDEX = 4  # refer to input device id
 CHUNK = 1024
-RECORD_SECONDS = 13
-WAVE_OUTPUT_FILENAME = "output66voice.wav"
+RECORD_SECONDS = 14
+WAVE_OUTPUT_FILENAME = "aoutput42.wav"
 
 p = pyaudio.PyAudio()
 

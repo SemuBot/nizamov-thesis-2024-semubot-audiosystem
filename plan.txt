@@ -1,0 +1,37 @@
+1)Work on sin measurements: measure sin waves and then transform that into ffts and from there calculate the SNR 
+
+2)Similarly, by combining these measurements we can plot a graph of SNR to see how it differs at different frequencies
+
+3)Repeat the basic voice measurements for a different string of voice from speakly in female voice ✔
+
+4)Record the delta noise again. ✔
+
+5)Read a few chapters of the book
+
+6)Change the model for speech-to-text*
+
+7)Add a 3D graph*
+
+8)Word error rate calculation* ✔
+
+THEN:
+
+1)Repeat the same stuff, but without ALL OFF and see how it differs. ✔
+
+2)Do a little study on materials for coating/capsule ✔
+
+AFTER THAT:
+
+1)Repeat everything, but with a new prepared capsule and see how it performs
+
+FINALLY FOR THE PRACTICAL PART:
+
+1)Connect it with the actual robot: connect to RasPi, connect the amplifier, connect the speakers and apply it to the robot to see its final function
+
+2)Make a ROS2 publisher and make a ROS2 package
+
+3)Write some more code for the audiodoa2.py* ✔
+
+
+
+[✓,✔] <- symbols for DONE
