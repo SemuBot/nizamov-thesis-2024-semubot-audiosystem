@@ -1,4 +1,4 @@
-# Semubot hardware audiosystem and ROS2 software integration. <br/>
+# Semubot hardware audiosystem and ROS2 software integration <br/>
 Author: Timur Nizamov <br/>
 
 
