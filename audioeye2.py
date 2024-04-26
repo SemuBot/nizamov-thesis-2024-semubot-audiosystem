@@ -137,13 +137,13 @@ try:
 
         #pygame.display.flip()
 
-        # Copy the screen to a new surface
-        screen_copy = pygame.Surface((width, height))
-        screen_copy.blit(screen, (0, 0))
-        # Flip the new surface vertically
-        screen_copy = pygame.transform.flip(screen_copy, True, True)
-        # Update the original screen with the flipped surface
-        screen.blit(screen_copy, (0, 0))
+        # # Copy the screen to a new surface
+        # screen_copy = pygame.Surface((width, height))
+        # screen_copy.blit(screen, (0, 0))
+        # # Flip the new surface vertically
+        # screen_copy = pygame.transform.flip(screen_copy, True, True)
+        # # Update the original screen with the flipped surface
+        # screen.blit(screen_copy, (0, 0))
 
         pygame.display.flip()
 
