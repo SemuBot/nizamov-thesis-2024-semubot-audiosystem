@@ -13,3 +13,7 @@ Tervist ja tere tulemast SemuBoti helisüsteemi hoidlasse. Siin on 3 kausta:  <b
 * `Measurements` viib Jupyteri märkmikusse `snr.ipynb` koos mikrofoni massiivi ja graafikute testidega; seal asuvad ka mõned mikrofonimassiivi testskriptid ja proovid.
 * `semubot_audio` on pakett, mis sisaldab andmete saatmise sõlme "respeaker_node", kõik juhised asuvad failis "README.md".
 * `semubot_eyes` on pakett, mis sisaldab saamise sõlme, mis võtab vastu DOA andmed `respeaker_node`st ja juhib roboti näo silmade liikumist, seadistusjuhised asuvad hoidla failis `README.md`.
+
+## Hardware solution/Riistvara lahendus
+
+<img src="" width="450"/> <img src="" width="350"/>
