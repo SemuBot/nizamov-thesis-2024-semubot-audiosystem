@@ -1,6 +1,6 @@
-[submodule "semubot_audio"]
-	path = semubot_audio
-	url = https://github.com/SemuBot/semubot_audio.git
 [submodule "semubot_eyes"]
 	path = semubot_eyes
 	url = https://github.com/SemuBot/semubot_eyes.git
+[submodule "respeaker_ros"]
+	path = respeaker_ros
+	url = https://github.com/SemuBot/respeaker_ros.git
