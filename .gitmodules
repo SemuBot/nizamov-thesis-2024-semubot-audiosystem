@@ -4,3 +4,6 @@
 [submodule "respeaker_ros"]
 	path = respeaker_ros
 	url = https://github.com/SemuBot/respeaker_ros.git
+[submodule "audio_test"]
+	path = audio_test
+	url = https://github.com/timniz/audio_test.git
