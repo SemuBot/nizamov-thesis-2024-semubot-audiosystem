@@ -20,8 +20,6 @@ Tervist ja tere tulemast SemuBoti helisüsteemi hoidlasse. Siin on 5 kausta:  <b
 
 ## Hardware solution/Riistvara lahendus
 
-<img src="Visuals/robotlid.jpg" width="310"/> <img src="Visuals/hardware.jpg" width="550"/>
+<img src="Visuals/robotlid.jpg" width="550"/> <img src="Visuals/hardware.jpg" width="550"/>
+<img src="Visuals/robot_assembly.jpg" width="550"/>
 
-<p align="center">
-  <img src="Visuals/robot_assembly.jpg" width="400"/>
-</p>
