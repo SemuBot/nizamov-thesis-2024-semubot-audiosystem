@@ -1,6 +1,6 @@
 # Measurements
 
-A folder with tests and testing scripts from [developers] (https://wiki.seeedstudio.com/ReSpeaker_Mic_Array_v2.0/)
+A folder with tests and testing scripts from [developers](https://wiki.seeedstudio.com/ReSpeaker_Mic_Array_v2.0/)
 
 * `snr.ipynb` is the Jupyter notebook where everything is run, it uses recodings from the folder `seventh_measure`.
 
