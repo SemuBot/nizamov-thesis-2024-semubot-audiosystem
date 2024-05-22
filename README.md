@@ -16,7 +16,7 @@ Tervist ja tere tulemast SemuBoti helisüsteemi hoidlasse. Siin on 5 kausta:  <b
 * `Visuals` on kaust minu lõputöö videote ja piltidega.
 * `respeaker_ros` on pakett, mis sisaldab andmete saatmise sõlme "respeaker_node", kõik juhised asuvad failis "README.md".
 * `semubot_eyes` on pakett, mis sisaldab saamise sõlme, mis võtab vastu DOA andmed `respeaker_node`st ja juhib roboti näo silmade liikumist, seadistusjuhised asuvad hoidla failis `README.md`.
-* `audio_test` on testpakett, mis sisaldab saamise sõlme, mis võtab vastu helivoogu `respeaker_node`st, paneb selle 8-sekundisse puhvrisse ja esitab selle helisüsteemi kõlarite kaudu. Lisaks loob see ühenduse Google'i kõnetuvastusega, transkribeerib heli tekstiks ja avaldab selle.
+* `audio_test` on testpakett, mis sisaldab saamise-saatmise sõlme, mis võtab vastu helivoogu `respeaker_node`st, paneb selle 8-sekundisse puhvrisse ja esitab selle helisüsteemi kõlarite kaudu. Lisaks loob see ühenduse Google'i kõnetuvastusega, transkribeerib heli tekstiks ja avaldab selle.
 
 ## Hardware solution/Riistvara lahendus
 
